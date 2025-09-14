@@ -1,0 +1,31 @@
+<DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/Login.css')}}">
+</head>
+<body>
+    <a href="/home" class="Login-to-Home">⬅ Back to Home</a>
+    <div class="Login-area">
+        <h1 style="color:white">Sign In to MoniterAI</h1>
+        <p>Access your security dashboard</p>
+        <form class="Login" method="POST" action="/home">
+            Username<br>
+            <input type="text" placeholder="Username" required/>
+            <br>Password<br>
+            <input type="password" placeholder="Password" required/><br>
+            <button type="submit">Login</button>
+            <h5>Demo Credetials:</h5>
+            <ol class="Login-demo">
+                <li>admin/ admin123(Administrator)</li>
+                <li>demo/ demo123(Demo User)</li>
+            </ol>
+            <div class="footer-branding">
+                <h1>👁️‍🗨️MoniterAI</h1>
+    </div>
+    </div>
+    </form>
+</body>
+</html>

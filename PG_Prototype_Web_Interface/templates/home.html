@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/home.css')}}">
+</head>
+<body>
+  <div class="wrapper">
+    <header class="Header-1">
+        <h1 class="Project-Name">👁️‍🗨️MoniterAI</h1>
+        <nav class="nav-Header">
+            <a href="#home" id="a1" onclick="bg_color_header(events)">Home</a>
+            <a href="/about" id="a2" onclick="bg_color_header(events)">About</a>
+            <a href="#services" id="a3" onclick="bg_color_header(events)">Services</a>
+            <a href="#cameras" id="a4" onclick="bg_color_header(events)">Cameras</a>
+            <a href="/login" id="Login" onclick="bg_color_header(events)">Login</a>
+        </nav>
+    </header>
+    <section id="home">
+        <container class="container-1">
+            <div class="container-H1">
+                <h1 class="h1-1">Welcome to</h1>
+                <h1 class="h1-2"> AI Powered Survellance System</h1>
+            </div>
+            <div class="container-Description">
+                Advanced monitoring system with AI-powered detection, real-time alerts, and comprehensive security management for your facility.
+            </div>
+            <div class="button">
+                <button type="submit" id="btn-1">View Live Camera</button>
+                <button type="submit" id="btn-2">Learn More</button>
+            </div>
+        </container>
+    </section>
+    <section id="services">
+        <h1 class="cards-h1">Our Features</h1>
+        <h3 style="color:#8da3ad;">Discover what make us different.</h3>
+        <footer class="cards">
+            <div class="card1">
+                <h3>24/7 Monitering</h3>
+                <p>Live Monitering</p>
+            </div>
+            <div class="card2">
+                <h3>99% Accurated</h3>
+                <p>Face Detection</p>
+            </div>
+            <div class="card3">
+                <h3>Alert Messaging</h3>
+                <p>Instant Notification</p>
+            </div>
+        </footer>
+   </section>
+   <section id="cameras">
+       <h1>Live CCTV Camera Feed</h1>
+       <div class="cam-buttons">
+            <button type="submit" onclick="cam_init()" class="btn1">⏯️ Start</button>
+            <button type="submit" onclick="cam_terminate()" class="btn2">⏸️ Stop</button>
+       </div>
+    <container class="Camera">
+        <div class="cameras-1">
+            <h3>Cam-1</h3>
+            <img id="cam" width="300" height="250" alt="Live Feed Unavailable">
+        </div>
+        <div class="cameras-2">
+            <h3>Cam-2</h3>
+            <img id="scam" width="300" height="250" alt="Live Feed Unavailable">
+        </div>
+    </container>
+   </section>
+   <script>
+    function cam_init()
+    {
+        let cam = document.getElementById("cam");
+        cam.src="{{url_for('video') }}"
+    }
+    function cam_terminate()
+    {
+        let cam = document.getElementById("cam");
+        cam.src="";
+    }
+   </script>
+</body>
+</html>

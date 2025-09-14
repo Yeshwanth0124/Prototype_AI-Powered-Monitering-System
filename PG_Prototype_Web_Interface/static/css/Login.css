@@ -1,0 +1,93 @@
+       body
+        {
+            font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+            background-color:rgb(19,17,23);
+            display:flex;
+            justify-content:center;
+            font-weight:bolder;
+            font-size:15px;
+            color:white;
+        }
+        .Login-area
+        {
+            background-color:#232C30;
+            padding:30px 40px;
+            width:350;
+            height:80vh;
+            box-shadow:
+            0 0 20px #0A1924,
+            0 0 20px #00BFFF,
+            0 0 20px #00FFFF;
+            border-radius:15px;
+            margin-top:15px;
+        }
+        h1
+        {
+            text-align:center;
+            font-size:25px;
+            padding-top:50px; 
+        }
+        p
+        {
+            text-align:center;
+            font-size:15px;
+            font-weight:300;
+        }
+        .Login
+        {
+            text-align:left;
+            padding-left:0;
+        }
+        .Login-to-Home
+        {
+            text-decoration:none;
+            color:#b8deee !important;
+        }
+        .Login-to-Home:hover
+        {
+            color:white !important;
+        }
+        input
+        {
+            width:100%;
+            height:40px;
+            border-radius:10px;
+            background-color:black;
+            margin-top:5px;
+            margin-bottom:15px;
+            border:none;
+            box-shadow:inset 0 0 5px #00BFFF;
+            color:white;
+            padding-left:40px;
+            font-size:20px;
+        }
+        input::placeholder
+        {
+            color:#232C30;
+            font-size:15px;
+            font-weight:500;
+        }
+        button
+        {
+            background-color:#1FB1F9;
+            width:100%;
+            padding:10px;
+            border-radius:10px;
+            border:none;
+            font-weight:bold;   
+        }
+        .Login-demo
+        {
+            color:#DDDDDD;
+            font-weight:400;
+        }
+        .footer-branding
+        {
+            background:linear-gradient(90deg,#00F5FF, #1FB1F9, #7B61FF);
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+            padding:20px 30px;
+            display:flex;
+            justify-content:right;
+            flex-direction:column;
+        }
