@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body>
+  <div class="wrapper">
+    
+    <div class="Header">
+        <header class="Header-1">
+            <h1 class="Project-Name">👁️‍🗨️ MoniterAI</h1>
+            <nav class="nav-Header">
+                <a href="#home" id="a1" onclick="bg_color_header(events)">Home</a>
+                <a href="#about" id="a2" onclick="bg_color_header(events)">About</a>
+                <a href="#services" id="a3" onclick="bg_color_header(events)">Services</a>
+                <a href="#cameras" id="a4" onclick="bg_color_header(events)">Cameras</a>
+                <a href="/login" id="Login" onclick="bg_color_header(events)">Login</a>
+            </nav>
+        </header>
+    </div>
+    <!-- slide1 -->
+    <div class="slide1" id="home">
+        <container class="container-1">
+            <div class="cont-left">
+                <img class="cc" src="{{ url_for('static', filename='css/cc_camera.png') }}" alt="cc_cam">
+            </div>
+            <div class="cont-right">
+                <div class="container-H1">
+                <h1 class="h1-1">Welcome to</h1>
+                <h1 class="h1-2"> AI Powered </h1>
+                <h1 class="h1-3">Survellance System</h1>
+                </div>
+            <div class="container-Description">
+                Advanced monitoring system with AI-powered detection, real-time alerts, and comprehensive security management for your facility.
+            </div>
+            <div class="button">
+                <button type="submit" id="btn-1">View Live Camera</button>
+                <button type="submit" id="btn-2">Learn More</button>
+            </div>
+            </div>
+        </container>
+    </div>
+    <!-- slide2 -->
+
+    <div class="About_Page" id="about">
+        <div class="Content_main">
+            <div class="Vision">
+                <div class="vision-image">
+                    <img class="about_image" src="{{ url_for('static', filename='css/vision.jpg') }}" alt="vision_image">
+                </div>
+                <div class="vision-cont">
+                    <h3 class="about-title">Our Vision</h3>
+                    <p class="about-text">
+                        Our vision is to build a future where technology ensures security, trust, 
+                        and convenience by using face recognition as a powerful tool for identity 
+                        verification and automation. We aim to contribute to a world where 
+                        AI-driven solutions make everyday tasks safer, smarter, and more efficient.
+                    </p>
+                </div>         
+            </div>
+            <div class="Mission">  
+                <div class="mission-cont">
+                    <h3 class="about-title">Our Mission</h3>
+                    <p class="about-text">
+                        Our mission is to design and develop a reliable face recognition system 
+                        that combines accuracy, speed, and usability. Through this project, we 
+                        strive to showcase the practical application of artificial intelligence 
+                        in solving real-world problems such as security, attendance, and authentication.
+                    </p>
+                </div>
+                <div class="mission-image">
+                    <img class="about_image" src="{{ url_for('static', filename='css/mission.jpg') }}" alt="mission_image">
+                </div>
+                  
+            </div>
+            <div class="Story">
+                <div class="story-image">
+                    <img class="about_image" src="{{ url_for('static', filename='css/story.jpg') }}" alt="story_image">
+                </div>
+                <div class="story-cont">
+                    <h3 class="about-title">Our Story</h3>
+                    <p class="about-text">
+                        Our journey began with a simple idea: to explore the power of artificial 
+                        intelligence and machine learning in solving real-world problems. Starting 
+                        with curiosity and passion, we developed this face recognition project to 
+                        demonstrate how AI can be applied to enhance security, simplify 
+                        authentication, and automate tasks. What began as a learning initiative 
+                        has now grown into a practical solution that reflects our dedication to 
+                        innovation and technology-driven progress.
+                    </p>
+                </div>    
+            </div>
+        </div>
+    </div>
+
+    <section id="services">
+        <h1 class="cards-h1">Our Features</h1>
+        <h3 style="color:#8da3ad;">Discover what make us different.</h3>
+        <footer class="cards">
+            <div class="card1">
+                <h3>24/7 Monitering</h3>
+                <p class="card1_para">Live Monitering</p>
+            </div>
+            <div class="card2">
+                <h3>99% Accurated</h3>
+                <p class="card1_para">Face Detection</p>
+            </div>
+            <div class="card3">
+                <h3>Alert Messaging</h3>
+                <p class="card1_para">Instant Notification</p>
+            </div>
+        </footer>
+   </section>
+   <!-- slide3 -->
+   <section id="cameras">
+        <div class="main_cam">
+            <div class="top_cont">
+            <h1>Live CCTV <span>Camera Feed</span></h1>
+            </div>
+            <div class="cam-buttons">
+                    <button type="submit" onclick="cam_init()" class="btn1">⏯️ Start</button>
+                    <button type="submit" onclick="cam_terminate()" class="btn2">⏸️ Stop</button>
+            </div>
+        </div>
+        <container class="Camera">
+            <div id="cameras-1" class="camera_box">
+                <h3>Cam-1</h3>
+                <img id="cam" width="380px" height="380px" alt="Live Feed Unavailable">
+            </div>
+            <div id="cameras-2" class="camera_box">
+                <h3>Cam-2</h3>
+                <img id="scam" width="380px" height="380px" alt="Live Feed Unavailable">
+            </div>
+            <div id="cameras-3" class="camera_box">
+                <h3>Cam-3</h3>
+                <img id="scam" width="380px" height="380px" alt="Live Feed Unavailable">
+            </div>
+        </container>
+   </section>
+   </div>
+   <script>
+    function cam_init()
+    {
+        let cam = document.getElementById("cam");
+        cam.src="{{url_for('video') }}"
+    }
+    function cam_terminate()
+    {
+        let cam = document.getElementById("cam");
+        cam.src="";
+    }
+   </script>
+</body>
+</html>
